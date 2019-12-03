@@ -1,0 +1,228 @@
+
+public class SinglyLinkedList {
+	Node head;
+
+	public void add(int data) {
+		Node trav;
+		
+		Node node = new Node();
+		node.data = data;
+		node.next = null;
+		
+		if(head == null) {
+			head = node;
+		}
+		else {
+			trav = head;
+			while(trav.next != null) {
+				trav = trav.next;
+			}
+			trav.next = node;
+		}
+	}
+	
+	public void add(int data, int position) {
+		Node trav, next, prev;
+		
+		if(position > 0) {
+			if(head == null) {
+				System.out.println("The list is not created");
+			}
+			else {
+				trav = head;
+				int count = 1;
+				Node node = new Node();
+				node.data = data;
+				node.next = null;
+				
+				if(position == 1)
+				{
+					node.next = head;
+					head = node;
+				}
+				else {
+					prev = head;
+					while(count != position-1 && trav.next != null) {
+						count++;
+						prev = trav;
+						trav = trav.next;
+					}
+					if(trav.next == null && count < position-1) {
+						System.out.println("Wrong position");
+					}
+					else {
+						next = trav.next;
+						trav.next = node;
+						node.next = next;
+					}
+				}
+			}
+		}
+		else {
+			System.out.println("Wrong position");
+		}
+
+	}
+	
+	public void display() {
+	
+		Node trav = head;
+		
+		while(trav != null) {
+			System.out.print(trav.data + " ");
+			trav = trav.next;
+		}
+	}
+	
+	public int size() {
+		Node trav = null;
+		int size = 0;
+		
+		trav = head;
+		while(trav != null) {
+			trav = trav.next;
+			size++;
+		}
+		return size;
+	}
+	
+	public boolean contains(int data) {
+		Node trav = head;
+		
+		while(trav != null) {
+			if(trav.data == data) {
+				return true;
+			}
+			trav = trav.next;
+		}
+		return false;
+	}
+	
+	public boolean remove(int position) {
+		Node trav = null, prev = null, next = null;
+		
+		if(head != null) {
+			trav = head;
+			
+			if(position == 1) {
+				head = head.next;
+				return true;
+			}
+			
+			else {
+				int count = 1;
+				for(count = 1; count < position && trav!= null; count++) {
+					prev = trav;
+					trav = trav.next;
+					if(trav!= null) {
+						next = trav.next;
+					}
+				}
+				if(count <= position && trav == null) {
+					return false;
+				}
+				else {
+					prev.next = next;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public void reverse() {
+		Node prev = null, trav = null, next = null;
+		
+		trav = head;
+		if(trav.next != null) {
+			next = trav.next;
+		}
+		while(next != null) {
+			prev = trav;
+			trav = next;
+			if(trav.next != null) {
+				next = trav.next;
+			}
+			else {
+				head = trav;
+				next = null;
+			}
+			
+			if(prev == head) {
+				prev.next = null;
+			}
+			trav.next = prev;
+		}
+	}
+	
+	public void sort() {
+		Node prev1 = null, trav1 = null, next1 = null;
+		Node prev2 = null, trav2 = null, next2 = null;
+		boolean swap = false;
+		
+		if(head != null) {
+			trav1 = head;
+	
+			if(trav1.next != null) {
+				next1 = trav1.next;
+
+				if(trav1.data > next1.data) {
+					trav1.next = next1.next;
+					next1.next = trav1;
+					head = next1;
+					
+					if(trav1.next != null) {
+						prev1 = trav1;
+						trav1 = trav1.next;
+						if(trav1.next != null) {
+							next1 = trav1.next;
+						}
+					}
+				}
+				while(trav1 != null) {
+					trav2 = head;
+					next2 = trav2.next;
+					swap = false;
+					
+					while(trav2 != trav1) {
+						
+						if(trav2.data > trav1.data) {
+							swap = true;
+							if(trav2 == head) {
+								trav1.next = trav2;
+								prev1.next = next1;
+								head = trav1;
+							}
+							else {
+								prev2.next = trav1;
+								trav1.next = trav2;
+								prev1.next = next1;
+							}
+							break;
+						}
+						
+						prev2 = trav2;
+						trav2 = trav2.next;
+						next2 = trav2.next;
+					}
+					
+					if(swap == false) {
+						prev1 = trav1;
+					}
+					
+					trav1 = next1;
+					if(trav1 != null) {
+						if(trav1.next != null) {
+							next1 = trav1.next;
+						}
+						else {
+							next1 = null;
+						}
+					}
+					System.out.println("\n");
+					display();
+				}	
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+
+public class SinglyLinkedList {
+	Node head;
+
+	public void add(int data) {
+		
+	}
+	
+	public void add(int data, int position) {
+		
+	}
+	
+	
+}

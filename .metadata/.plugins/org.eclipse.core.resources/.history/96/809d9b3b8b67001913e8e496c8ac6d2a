@@ -1,0 +1,9 @@
+package simpleInheritance;
+
+public class ShapeTriangle {
+
+	public void display()
+	{
+		System.out.println("In Subclass triangle");
+	}
+}

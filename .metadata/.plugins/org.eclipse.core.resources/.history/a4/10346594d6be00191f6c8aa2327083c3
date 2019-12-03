@@ -1,0 +1,67 @@
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
+
+public class QuizCardBuilder {
+
+	private JFrame frame;
+	private JTextArea question;
+	private JTextArea answer;
+	
+	public static void main(String[] args) {
+		QuizCardBuilder builder = new QuizCardBuilder();
+		builder.go();
+	}
+
+	public void go() {
+		frame = new JFrame("Quiz Card Builder");
+		JPanel mainPanel = new JPanel();
+		
+		question = new JTextArea(6, 20);
+		question.setLineWrap(true);
+		question.setWrapStyleWord(true);
+		JScrollPane qScroller = new JScrollPane(question);
+		qScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		qScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		
+		answer = new JTextArea(6, 20);
+		answer.setLineWrap(true);
+		answer.setWrapStyleWord(true);
+		JScrollPane aScroller = new JScrollPane(answer);
+		aScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		aScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		
+		JButton nextButton = new JButton("Next Card");
+		JLabel qLabel = new JLabel("Question");
+		JLabel aLabel = new JLabel("Answer");
+		
+		mainPanel.add(qLabel);
+		mainPanel.add(qScroller);
+		mainPanel.add(aLabel);
+		mainPanel.add(aScroller);
+		mainPanel.add(nextButton);
+		
+		JMenuBar menuBar = new JMenuBar();
+		JMenu fileMenu = new JMenu("File");
+		JMenuItem newMenuItem = new JMenuItem("New");
+		JMenuItem saveMenuItem = new JMenuItem("Save");
+		fileMenu.add(newMenuItem);
+		fileMenu.add(saveMenuItem);
+		menuBar.add(fileMenu);
+		
+		frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
+		frame.setSize(500, 600);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+}

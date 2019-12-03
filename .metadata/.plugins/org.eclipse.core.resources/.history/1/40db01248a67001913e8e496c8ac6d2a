@@ -1,0 +1,5 @@
+package simpleInheritance;
+
+public class ShapeCircle extends Shape{
+
+}

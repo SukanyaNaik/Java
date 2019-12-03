@@ -1,0 +1,27 @@
+import java.sql.*;
+
+public class JDBCDemo {
+
+	public static void main(String[] args) throws Exception {
+		
+		String url = "jdbc:mysql://localhost:3306/student?useSSL=false&allowPublicKeyRetrieval=true";
+		String userName = "root";
+		String password = "Root123";
+		String query = "Select * from StudentName";
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection(url, userName, password);
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(query);
+		
+		rs.next();
+		int RollNo = rs.getInt("RollNo");
+		String Name = rs.getString("FirstName");
+		
+		System.out.println("Student id : " + RollNo + "Student Name : " + Name);
+		
+		st.close();
+		con.close();
+	}
+
+}

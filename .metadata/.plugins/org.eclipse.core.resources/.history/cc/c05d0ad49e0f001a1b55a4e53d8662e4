@@ -1,0 +1,10 @@
+
+public class SinglyLinkedList {
+	Node head;
+
+	append(data);
+	
+	public void append(int data) {
+		
+	}
+}

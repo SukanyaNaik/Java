@@ -1,0 +1,33 @@
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+public class QuizCardBuilder {
+
+	private JFrame frame;
+	private JTextArea question;
+	private JTextArea answer;
+	
+	public static void main(String[] args) {
+		QuizCardBuilder builder = new QuizCardBuilder();
+		builder.go();
+	}
+
+	public void go() {
+		frame = new JFrame("Quiz Card Builder");
+		JPanel mainPanel = new JPanel();
+		
+		question = new JTextArea();
+		answer = new JTextArea();
+		
+		mainPanel.add(question);
+		mainPanel.add(answer);
+		frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
+		frame.setSize(500, 600);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+}

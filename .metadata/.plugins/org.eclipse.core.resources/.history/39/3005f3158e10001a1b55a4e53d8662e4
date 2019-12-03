@@ -1,0 +1,30 @@
+
+public class MyList {
+
+	public static void main(String[] args) {
+		SinglyLinkedList list = new SinglyLinkedList();
+		
+		list.add(5);
+		list.add(12);
+		list.add(8);
+		
+		int size = list.size();
+		System.out.println("Size = " + size);
+		System.out.println("The list is : ");
+		list.display();
+		
+		list.add(20,1);
+		System.out.println("\nThe list is : ");
+		list.display();
+		size = list.size();
+		System.out.println("\nSize = " + size);
+		
+		boolean hasA = list.contains(5);
+		System.out.println(hasA);
+		
+		boolean flag = list.remove(5);
+		System.out.println("\nThe list is : ");
+		list.display();
+	}
+
+}

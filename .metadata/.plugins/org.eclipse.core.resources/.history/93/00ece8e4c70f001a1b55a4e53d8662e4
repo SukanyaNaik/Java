@@ -1,0 +1,132 @@
+
+public class SinglyLinkedList {
+	Node head;
+
+	public void add(int data) {
+		Node trav;
+		
+		Node node = new Node();
+		node.data = data;
+		node.next = null;
+		
+		if(head == null) {
+			head = node;
+		}
+		else {
+			trav = head;
+			while(trav.next != null) {
+				trav = trav.next;
+			}
+			trav.next = node;
+		}
+	}
+	
+	public void add(int data, int position) {
+		Node trav, next, prev;
+		
+		if(position > 0) {
+			if(head == null) {
+				System.out.println("The list is not created");
+			}
+			else {
+				trav = head;
+				int count = 1;
+				Node node = new Node();
+				node.data = data;
+				node.next = null;
+				
+				if(position == 1)
+				{
+					node.next = head;
+					head = node;
+				}
+				else {
+					prev = head;
+					while(count != position-1 && trav.next != null) {
+						count++;
+						prev = trav;
+						trav = trav.next;
+					}
+					if(trav.next == null && count < position-1) {
+						System.out.println("Wrong position");
+					}
+					else {
+						next = trav.next;
+						trav.next = node;
+						node.next = next;
+					}
+				}
+			}
+		}
+		else {
+			System.out.println("Wrong position");
+		}
+
+	}
+	
+	public void display() {
+	
+		Node trav = head;
+		
+		while(trav != null) {
+			System.out.print(trav.data + " ");
+			trav = trav.next;
+		}
+	}
+	
+	public int size() {
+		Node trav = null;
+		int size = 0;
+		
+		trav = head;
+		while(trav != null) {
+			trav = trav.next;
+			size++;
+		}
+		return size;
+	}
+	
+	public boolean contains(int data) {
+		Node trav = head;
+		
+		while(trav != null) {
+			if(trav.data == data) {
+				return true;
+			}
+			trav = trav.next;
+		}
+		return false;
+	}
+	
+	public boolean remove(int position) {
+		Node trav = null, prev = null, next = null;
+		
+		if(head != null) {
+			trav = head;
+			
+			if(position == 1) {
+				head = head.next;
+				return true;
+			}
+			
+			else {
+				int count = 1;
+				for(count = 1; count <= position && trav!= null; count++) {
+					prev = trav;
+					trav = trav.next;
+					if(trav.next!= null && trav!= null) {
+						next = trav.next;
+					}
+				}
+				if(count < position && trav == null) {
+					return false;
+				}
+				else {
+					prev.next = next;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+}

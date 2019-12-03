@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+
+public class DotComTestDrive {
+
+	public static void main(String[] args) {
+		ArrayList<String> locations = new ArrayList<String>();
+		
+		locations.add("3");
+		locations.add("4");
+		locations.add("5");
+		
+		DotCom D1 = new DotCom();
+		D1.setLocations(locations);
+		//D1.checkYourself();
+		
+		String []userGuess = new String[5];
+		
+		userGuess[0] = "2";
+		userGuess[1] = "3";
+		userGuess[2] = "4";
+		userGuess[3] = "5";
+		userGuess[4] = "1";
+		
+		 
+		String result = "miss";
+		int i = 0;
+		
+		GameHelper helper = new GameHelper();
+		
+		while (!(result.equals("Kill")))
+		{
+			result = D1.checkYourself(userGuess[i]);
+			System.out.println("The result is - " + result);
+			
+			/*if (!(result.equals("Kill")))
+				userGuess = helper.getuserInput("Enter user guess");*/
+				
+			i++;
+		}
+	}
+
+}

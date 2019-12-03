@@ -1,0 +1,13 @@
+package simpleInheritance;
+
+public class Shape
+{
+	public void display()
+	{
+		
+	}
+}
+
+public class SimpleInheritance {
+
+}
