@@ -28,9 +28,12 @@ public class MyList {
 		list.add(2);
 		list.add(10);
 		list.add(12);
+		list.add(2);
 		list.add(1);
 		list.add(5);
 		list.add(6);
+		list.add(4);
+		list.add(10);
 		
 		int size = list.size();
 		System.out.println("Size = " + size);
@@ -57,9 +60,11 @@ public class MyList {
 		
 		boolean flag = list.remove(5); // Remove element by position
 		System.out.println("\nThe list is : ");
-		list.display();*/
+		list.display();
 		
-		list.sort();
+		list.sort();*/
+		
+		list.removeDuplicate();
 		System.out.println("\nThe list is : ");
 		list.display();
 	}

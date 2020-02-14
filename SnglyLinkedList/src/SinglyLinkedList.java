@@ -225,6 +225,34 @@ public class SinglyLinkedList {
 					display();
 				}	
 			}
+			
+			
+		}
+	}
+	
+	public void removeDuplicate() {
+		Node trav = null, prev = null, next = null;
+		
+		if(head != null) {
+			trav = head;
+			
+			while(trav.next != null) {
+				prev = trav;
+				next = trav.next;
+
+				while(next != null) {
+					if(trav.data == next.data) {
+						prev.next = next.next;
+						prev = next;
+						next = next.next;
+					}
+					else {
+						prev = next;
+						next = next.next;
+					}
+				}
+				trav = trav.next;
+			}
 		}
 	}
 }
