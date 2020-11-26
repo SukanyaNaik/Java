@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>MyBankingAPI</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>com.revature.utils.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>CreateUserServlet</servlet-name>
+  	<servlet-class>com.revature.utils.CreateUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CreateUserServlet</servlet-name>
+  	<url-pattern>/createUserServlet</url-pattern>
+  </servlet-mapping>
+  	
+  <servlet>
+  	<servlet-name>FindUserByIdServlet</servlet-name>
+  	<servlet-class>com.revature.utils.FindUserByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FindUserByIdServlet</servlet-name>
+  	<url-pattern>/findUserById</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>FindUserByNameServlet</servlet-name>
+  	<servlet-class>com.revature.utils.FindUserByNameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FindUserByNameServlet</servlet-name>
+  	<url-pattern>/findUserByName</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>UpdateUserServlet</servlet-name>
+  	<servlet-class>com.revature.utils.UpdateUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateUserServlet</servlet-name>
+  	<url-pattern>/updateUserServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DeleteUserByIdServlet</servlet-name>
+  	<servlet-class>com.revature.utils.DeleteUserByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeleteUserByIdServlet</servlet-name>
+  	<url-pattern>/deleteUserById</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>FindAccountByIdServlet</servlet-name>
+  	<servlet-class>com.revature.utils.FindAccountByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FindAccountByIdServlet</servlet-name>
+  	<url-pattern>/findAccountById</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>WithdrawAmountServlet</servlet-name>
+  	<servlet-class>com.revature.utils.WithdrawAmountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>WithdrawAmountServlet</servlet-name>
+  	<url-pattern>/withdrawAmountServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DepositAmountServlet</servlet-name>
+  	<servlet-class>com.revature.utils.DepositAmountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DepositAmountServlet</servlet-name>
+  	<url-pattern>/depositAmountServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>UpgradeUserServlet</servlet-name>
+  	<servlet-class>com.revature.utils.UpgradeUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpgradeUserServlet</servlet-name>
+  	<url-pattern>/upgradeUserServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>AddUserToAccountServlet</servlet-name>
+  	<servlet-class>com.revature.utils.AddUserToAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddUserToAccountServlet</servlet-name>
+  	<url-pattern>/addUserToAccountServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>OpenNewJointAccountServlet</servlet-name>
+  	<servlet-class>com.revature.utils.OpenNewJointAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>OpenNewJointAccountServlet</servlet-name>
+  	<url-pattern>/openNewJointAccountServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>AddUserServlet</servlet-name>
+  	<servlet-class>com.revature.utils.AddUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddUserServlet</servlet-name>
+  	<url-pattern>/addUserServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>com.revature.utils.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/logoutServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>OpenNewAccountServlet</servlet-name>
+  	<servlet-class>com.revature.utils.OpenNewAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>OpenNewAccountServlet</servlet-name>
+  	<url-pattern>/openNewAccountServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
