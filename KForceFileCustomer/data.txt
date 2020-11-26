@@ -1,0 +1,8 @@
+ID,NAME,CITY,COUNTRY,CPERSON,EMPLCNT,CONTRCNT,CONTRCOST
+00000001,Breadpot,Sydney,Australia,Sam.Keng@info.com,250,48,1024.00
+00000002,Hoviz,Manchester,UK,harry.ham@hoviz.com,150,7,900.00
+00000003,Hoviz,London,UK,hamlet.host@hoviz.com,1500,12800,10510.50
+00000004,Grenns,London,UK,grenns@grenns.com,200,12800,128.30
+00000005,Magnolia,Chicago,USA,man@info.com,1024,25600,512000.00
+00000006,Dozen,San Francisco,USA,dozen@dozen.com,1000,5,1000.20
+00000007,Sun,San Francisco,USA,sunny@sun.com,2000,2,10000.01
