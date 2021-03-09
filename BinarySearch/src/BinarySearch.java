@@ -7,7 +7,7 @@ public class BinarySearch {
 		int array[] = {2,4,5,8,11,15,20,21,24,30,35,37};
 		BinarySearch obj = new BinarySearch();
 		boolean isNo = false;
-		int no = 2;
+		int no = -2;
 		
 		isNo = obj.search(no, array);
 		System.out.println("found = " + isNo);
