@@ -16,7 +16,7 @@ import com.revature.daos.UserDao;
 import com.revature.models.Account;
 import com.revature.models.User;
 
-public class FindAccountByIdServlet extends HttpServlet {
+public class FindAccountByIdsServlet extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -27,14 +27,18 @@ public class FindAccountByIdServlet extends HttpServlet {
 		super.init();
 	}
 	
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) 
+	public void doGet(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException{
 		
 		String accountId = req.getParameter("accountId");
+		
+		System.out.println("FindAccountByIdsServlet - accountId = " + accountId);
 		int id = Integer.parseInt(accountId);
 		System.out.println(this.getServletName() + " Service method called.");
 		HttpSession session = req.getSession();
 		User user = (User) session.getAttribute("CurrentUser");
+		
+		System.out.println("User = " + user.getFirstName());
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("Driver\n");
@@ -120,6 +124,12 @@ public class FindAccountByIdServlet extends HttpServlet {
 					else if(user.getRole().getRoleId() == 4) {
 						out.println("<h3><a href=\"admin.jsp\"> Back to menu. </a></h3>");
 					}
+					else if(user.getRole().getRoleId() == 1) {
+						out.println("<h3><a href=\"standardUser.jsp\"> Back to menu. </a></h3>");
+					}
+					else if(user.getRole().getRoleId() == 2) {
+						out.println("<h3><a href=\"premiumUser.jsp\"> Back to menu. </a></h3>");
+					}
 					
 				}
 				else {
@@ -133,6 +143,12 @@ public class FindAccountByIdServlet extends HttpServlet {
 					}
 					else if(user.getRole().getRoleId() == 4) {
 						out.println("<h3><a href=\"admin.jsp\"> Back to menu. </a></h3>");
+					}
+					else if(user.getRole().getRoleId() == 1) {
+						out.println("<h3><a href=\"standardUser.jsp\"> Back to menu. </a></h3>");
+					}
+					else if(user.getRole().getRoleId() == 2) {
+						res.sendRedirect("premiumUser.jsp");
 					}
 					out.println("</tr>");
 					out.println("<table>");

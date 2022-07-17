@@ -215,7 +215,7 @@ public class UserDao implements DAO <User, Integer>{
 			// 4. Process the resultSet.
 			if (rs != null) {
 				if(rs.next()) {
-					temp = new User();		
+					//temp = new User();		
 					System.out.println("RS not null\n");
 
 					do {

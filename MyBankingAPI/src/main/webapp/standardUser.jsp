@@ -23,6 +23,11 @@ for(Cookie cookie : cookies){
 <table>
 			<tr>
 				<td>
+					<h3><a href="<%=request.getContextPath()%>/ViewAccountsServlet"> View Accounts </a></h3>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<h3><a href="openNewAccount.html"> Open new Account </a></h3>
 				</td>
 			</tr>

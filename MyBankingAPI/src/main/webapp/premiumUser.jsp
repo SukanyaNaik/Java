@@ -20,43 +20,53 @@ for(Cookie cookie : cookies){
 <h1>Welcome <%=userName %>!</h1>
 <br>
 <form action="logoutServlet" method="post">
-<table>
-			<tr>
-				<td>
-					<h3><a href="Withdraw.html"> Withdraw </a></h3>
-				</td>
-			</tr>
+	<table>
+		<tr>
+			<td>
+				<h3><a href="<%=request.getContextPath()%>/ViewAccountsServlet"> View Accounts </a></h3>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3><a href="openNewAccount.html"> Open new Account </a></h3>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3><a href="Withdraw.html"> Withdraw </a></h3>
+			</td>
+		</tr>
 			
-			<tr>
-				<td>
-					<h3><a href="Deposit.html"> Deposit </a></h3>
-				</td>
-			</tr>
+		<tr>
+			<td>
+				<h3><a href="Deposit.html"> Deposit </a></h3>
+			</td>
+		</tr>
 			
-			<tr>
-				<td>
-					<h3><a href="UpgradeUser.jsp">Upgrade </a></h3>
-				</td>	
-			</tr>
+		<tr>
+			<td>
+				<h3><a href="UpgradeUser.jsp">Upgrade </a></h3>
+			</td>	
+		</tr>
 			
-			<tr>
-				<td>
-					<h3><a href="updateUser.html">Update Information </a></h3>
-				</td>
-			</tr>
+		<tr>
+			<td>
+				<h3><a href="updateUser.html">Update Information </a></h3>
+			</td>
+		</tr>
 			
-			<tr>
-				<td>
-					<h3><a href="addUsersToAccount.html">Add users to account </a></h3>
-				</td>
-			</tr>
+		<tr>
+			<td>
+				<h3><a href="addUsersToAccount.html">Add users to account </a></h3>
+			</td>
+		</tr>
 			
-			<tr>
-				<td>
-					<h3><a href="openNewJointAccount.html">Open new joint account </a></h3>
-				</td>
-			</tr>
-		</table>
+		<tr>
+			<td>
+				<h3><a href="openNewJointAccount.html">Open new joint account </a></h3>
+			</td>
+		</tr>
+	</table>
 		
 		<input type="submit" value="Logout" >
 </form>

@@ -65,12 +65,12 @@
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>FindAccountByIdServlet</servlet-name>
-  	<servlet-class>com.revature.utils.FindAccountByIdServlet</servlet-class>
+  	<servlet-name>FindAccountByIdsServlet</servlet-name>
+  	<servlet-class>com.revature.utils.FindAccountByIdsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>FindAccountByIdServlet</servlet-name>
-  	<url-pattern>/findAccountById</url-pattern>
+  	<servlet-name>FindAccountByIdsServlet</servlet-name>
+  	<url-pattern>/findAccountByIds</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -143,5 +143,14 @@
   <servlet-mapping>
   	<servlet-name>OpenNewAccountServlet</servlet-name>
   	<url-pattern>/openNewAccountServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ViewAccountsServlet</servlet-name>
+  	<servlet-class>com.revature.utils.ViewAccountsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ViewAccountsServlet</servlet-name>
+  	<url-pattern>/ViewAccountsServlet</url-pattern>
   </servlet-mapping>
 </web-app>

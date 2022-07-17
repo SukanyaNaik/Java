@@ -63,6 +63,7 @@ public class UpdateUserServlet extends HttpServlet{
 				
 				PrintWriter out = res.getWriter();
 				if(user != null) {
+					out.println("<html>");
 					out.println("<h3>User is updated!</h3>");
 					if(currentuser.getRole().getRoleId() == 3) {
 						out.println("<h3><a href=\"employee.jsp\"> Back to menu. </a></h3>");
@@ -78,9 +79,11 @@ public class UpdateUserServlet extends HttpServlet{
 						//res.addCookie(loginCookie);
 						res.sendRedirect("premiumUser.jsp");
 					}
+					out.println("</html>");
 				}
 				
 				else {
+					out.println("<html>");
 					out.println("<h3>Error updating user!</h3>");
 					if(currentuser.getRole().getRoleId() == 3) {
 						out.println("<h3><a href=\"employee.jsp\"> Back to menu. </a></h3>");
@@ -94,6 +97,7 @@ public class UpdateUserServlet extends HttpServlet{
 					else if(currentuser.getRole().getRoleId() == 2) {
 						out.println("<h3><a href=\"premiumUser.jsp\"> Back to menu. </a></h3>");
 					}
+					out.println("</html>");
 				}
 				conn.close();
 			}

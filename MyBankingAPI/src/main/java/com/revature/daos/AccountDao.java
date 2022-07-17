@@ -407,10 +407,10 @@ public class AccountDao implements DAO{
 		return account;
 	}
 
-	public Account findAccountByUserId(int userId) {
-		Account acc = null;
+	public List<Account> findAccounstByUserId(int userId) {
+		List <Account> accounts = new ArrayList<Account>();
 		Statement statement1 = null;
-		int accountId = 0;
+		List <Integer> accountIds = new ArrayList<Integer>();
 				
 		String userAccountSql = "SELECT AccountId_ref FROM UserAccount where UserId_ref = " + userId;
 		
@@ -426,13 +426,16 @@ public class AccountDao implements DAO{
 				System.out.println("RS not null\n");
 							
 				while(rs.next()) {
-					accountId = rs.getInt(1);	
+					if(!accountIds.contains(rs.getInt(1)))
+						accountIds.add(rs.getInt(1));	
 				}
 				rs.close();
 			}
-			if(accountId != 0) {
-				acc = new Account();
-				acc = (Account) findById(accountId);
+			//if(accountId != 0) {
+			for (Integer accountId : accountIds) {
+				//acc = new Account();
+				if(!accounts.contains(accountId))
+					accounts.add((Account) findById(accountId));
 			}
 		}
 		catch(SQLException e) {
@@ -441,7 +444,7 @@ public class AccountDao implements DAO{
 			System.out.println(e.getMessage());
 		}
 		
-		return acc;
+		return accounts;
 	}
 		
 	public boolean withdraw(Account acc, double amount) {
