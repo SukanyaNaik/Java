@@ -1,9 +1,0 @@
-package simpleInheritance;
-
-public class SimpleInheritance {
-
-	public static void main(String args)
-	{
-		
-	}
-}
