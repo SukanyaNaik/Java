@@ -1,16 +1,3 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class RemoveFromList {
 
@@ -26,44 +13,49 @@ public class RemoveFromList {
 
     ListNode head1 = deleteDuplicates(head);
     ListNode temp = head1;
-    while (temp.next != null) {
+    while (temp != null) {
       System.out.println(temp.val);
+      temp = temp.next;
     }
 
   }
 
   public static ListNode deleteDuplicates(ListNode head) {
-    ListNode temp = head;
-    Map <Integer, Integer> valueMap = new HashMap<>();
-
-    while(temp.next != null) {
-      if (valueMap.containsKey(temp.val)) {
-        valueMap.put(temp.val, valueMap.get(temp.val) + 1);
-      } else {
-        valueMap.put(temp.val, 1);
-      }
-    }
-
-
-    ListNode prev = head;
-    temp = head.next;
-    if (temp != null) {
-      while(temp.next != null) {
-        for (Map.Entry <Integer, Integer> entry : valueMap.entrySet())
-        {
-          if(entry.getKey() == temp.val){
-            int count = entry.getValue();
-            for (int i = 0; i < count; i++) {
-              temp = temp.next;
-            }
-            prev.next = temp;
-          }
-        }
-        prev = temp;
-        temp = temp.next;
-      }
-    }
-    return head;
+	  ListNode prev = head;
+	  ListNode curr = null;
+	  
+	  if(prev.next != null) {
+		curr = prev.next;
+		
+		while (curr != null && prev.val == curr.val) {
+			prev = curr;
+			curr = curr.next;
+		}
+		if(prev != head) {
+			head = curr;
+		}
+		
+		while (curr.next != null) {
+			if (curr.val != curr.next.val) {
+				prev = curr;
+				curr = curr.next;
+			}
+			else {
+				while (curr != null && curr.val == curr.next.val) {
+					curr = curr.next;
+				}
+				if(curr.next != null) {
+					prev.next = curr.next;
+					curr = curr.next;
+				} else {
+					prev.next = null;
+				}
+			}
+		}
+		
+	  }
+	  
+	  return head;
   }
 
 
@@ -76,27 +68,3 @@ public class RemoveFromList {
   }
 
 }
-
-/*
-for(Integer key : value.keySet())
-            {
-                if(key == temp.val)
-                {
-                    value.put()
-                    //ListNode temp1 = temp.next;
-                    //temp.next = temp1.next;
-                    break;
-                }
-            }
-            if(found == false)
-            {
-                value.put(temp.val, 1);
-            }
-            temp = temp.next;
-
-*/
-
-
-//1 2 3 4
-//temp = 1
-//temp1 = temp.next = 2

@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class StacksAndQueue {
 	Stack <Character>stack = new Stack<>();
-	Queue <Character>queue = new LinkedList();
+	Queue <Character>queue = new LinkedList<>();
 	
 	void pushCharacter(char c){
 		stack.push(c);

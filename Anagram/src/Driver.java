@@ -6,7 +6,9 @@ import java.util.Map;
 public class Driver {
 
 	public static void main(String[] args) {
-		String strs[] = {"eat","tea","tan","ate","nat","bat"};
+		//String strs[] = {"eat","tea","tan","ate","nat","bat"};
+		String []strs = {"act","pots","tops","cat","stop","hat"};
+		//String []strs={"",""};
 		List<List<String>> anagrams = groupAnagrams(strs);
 		
 		System.out.println("Anagrams = ");
@@ -27,7 +29,7 @@ public class Driver {
 		for(int i = 0; i < strs.length; i++) {
 			String str1 = strs[i];
 			List <String> temp = new ArrayList<String>();
-			temp.add(str1);
+			//temp.add(str1);
 			
 			if(!strMap.containsKey(str1)) {
 				strMap.put(str1, str1);
@@ -57,15 +59,18 @@ public class Driver {
 							}
 						}
 						if(areLettersSame) {
-							if(!strMap.containsKey(str2)) {
+							//if(!strMap.containsKey(str2)) {
 								temp.add(str2);
+								temp.add(str1);
 								strMap.put(str2, str2);
-							}
+							//}
 						}
 					}
 				
 				}
-				result.add(temp);
+				if(!temp.isEmpty()) {
+					result.add(temp);
+				}
 			}
 		}
 		return result;

@@ -4,11 +4,14 @@ public class BinarySearch {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int array[] = {2,4,5,8,11,15,20,21,24,30,35,37};
+		//int array[] = {2,4,5,8,11,15,20,21,24,30,35,37};
 		BinarySearch obj = new BinarySearch();
 		boolean isNo = false;
-		int no = -2;
+		//int no = -2;
 		
+		int []array = {-1,0,3,5,9,12};
+		int no = 13;
+				
 		isNo = obj.search(no, array);
 		System.out.println("found = " + isNo);
 	}
